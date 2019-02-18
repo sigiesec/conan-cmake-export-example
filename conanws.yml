@@ -1,0 +1,12 @@
+base:
+  folder: base
+  includedirs: main/a main/b
+  cmakedir: main
+
+dependent:
+  folder: dependent
+  cmakedir: main
+
+root: dependent
+generator: cmake
+name: MyProject

@@ -1,8 +1,9 @@
 dist: xenial
 language: cpp
-compiler:
-- gcc
-- clang
+matrix:
+  include:
+  - env: CONAN_USE_WORKSPACE=false
+  - env: CONAN_USE_WORKSPACE=true
 python: 3.7
 addons:
   apt:
@@ -20,6 +21,6 @@ install:
 - tar -xvzf cmake-3.13.4-Linux-x86_64.tar.gz
 - export CONAN_CMAKE_PROGRAM=$(pwd)/cmake-3.13.4-Linux-x86_64/bin/cmake
 - ${CONAN_CMAKE_PROGRAM} --version
+- conan --version
 script:
-- conan create base foo/bar
-- conan create dependent foo/bar
+- ./build.sh
