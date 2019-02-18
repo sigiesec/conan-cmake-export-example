@@ -1,6 +1,9 @@
 project(dependent)
 cmake_minimum_required(VERSION 3.9.0)
 
+include(${CMAKE_CURRENT_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup(TARGETS)
+
 find_package(base REQUIRED)
 add_subdirectory(c)
 

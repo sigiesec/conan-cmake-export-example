@@ -9,14 +9,13 @@ class DependentConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     options = {}
     default_options = {}
-    generators = "cmake_paths"
+    generators = "cmake"
     exports_sources = "main/*"
 
     requires = ("base/0.1@foo/bar",)
 
     def configure_cmake(self):
         cmake = CMake(self)
-        cmake.definitions["CMAKE_TOOLCHAIN_FILE"] = "conan_paths.cmake"
         cmake.configure(source_folder="main")
         return cmake
 
