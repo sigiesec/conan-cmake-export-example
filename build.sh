@@ -9,6 +9,7 @@ if [ "$CONAN_USE_WORKSPACE" == "false" ] ; then
 fi
 if [ "$CONAN_USE_WORKSPACE" == "true" ] ; then
   conan install . -if=build
+  cat CMakeLists.txt
   cd build
   ${CONAN_CMAKE_PROGRAM} ..
   ${CONAN_CMAKE_PROGRAM} --build .
