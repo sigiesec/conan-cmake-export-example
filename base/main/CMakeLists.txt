@@ -22,5 +22,6 @@ configure_package_config_file(base-config.cmake.in
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/base-config.cmake
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/base/cmake )
 
+message(STATUS "Defining alias libraries my::a and my::b")
 add_library(my::a ALIAS a)
 add_library(my::b ALIAS b)
