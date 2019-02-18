@@ -22,4 +22,4 @@ install:
 - ${CONAN_CMAKE_PROGRAM} --version
 script:
 - conan create base foo/bar
-
+- conan create dependent foo/bar
